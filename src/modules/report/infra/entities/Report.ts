@@ -1,4 +1,4 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, OneToOne, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn, UpdateDateColumn } from "typeorm";
 import { v4 as uuidv4 } from 'uuid'
 import { Employee } from "../../../employee/infra/entities/Employee";
 
@@ -10,9 +10,8 @@ class Report {
     @Column()
     description: string;
 
-
     @JoinColumn({ name: 'employeeId' })
-    @OneToOne(() => Employee, { eager: true })
+    @ManyToOne(() => Employee, { eager: true })
     employeeID: Employee;
 
     @Column()
