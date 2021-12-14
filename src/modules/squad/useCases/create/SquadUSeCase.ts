@@ -15,13 +15,9 @@ class CreateSquadUseCase {
     }: ISquadDTO): Promise<Squad> {
         const squad = new Squad()
 
-        if (name == " ") {
-            throw new AppError("Fill in fields!");
-        }
+        if (name == " ") throw new AppError("fill in the name!");
 
-        Object.assign(squad, {
-            name
-        })
+        Object.assign(squad, { name })
 
         const createSquad = await this.squadRepository.Create(squad)
 

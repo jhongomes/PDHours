@@ -11,9 +11,7 @@ class GetSquadController {
 
         const squad = await getSquadUseCase.execute(name);
 
-        if(!squad){
-            throw new AppError("Squad name does not exist!")
-        }
+        if (!squad) throw new AppError("Squad name does not exist!")
 
         return response.json(squad);
     }

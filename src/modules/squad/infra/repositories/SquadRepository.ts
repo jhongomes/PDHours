@@ -7,6 +7,12 @@ class SquadRepository extends BaseRepository<Squad> implements ISquadRepository 
         super(Squad);
     }
 
+    async get(): Promise<Squad[]> {
+        return this.repository.find({
+            relations: ["employeeId"]
+        })
+    }
+
     async findById(id: string): Promise<Squad> {
         const squad = await this.repository.findOne({ id })
 

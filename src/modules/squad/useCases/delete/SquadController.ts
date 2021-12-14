@@ -13,4 +13,5 @@ class DeleteSquadController {
         return response.sendStatus(200)
     }
 }
+
 export { DeleteSquadController }

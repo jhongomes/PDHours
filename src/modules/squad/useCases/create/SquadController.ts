@@ -7,12 +7,9 @@ class CreateSquadController {
         const { name } = request.body;
 
         const createSquandUseCase = container.resolve(CreateSquadUseCase);
-        const squad = await createSquandUseCase.execute({
-            name
-        });
+        const squad = await createSquandUseCase.execute({ name });
 
         return response.status(201).json(squad);
-
     }
 }
 

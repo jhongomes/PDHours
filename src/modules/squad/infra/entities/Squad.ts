@@ -1,5 +1,6 @@
-import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, PrimaryColumn, UpdateDateColumn } from "typeorm";
+import { Column, CreateDateColumn, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne, PrimaryColumn, UpdateDateColumn } from "typeorm";
 import { v4 as uuidv4 } from 'uuid'
+import { Employee } from "../../../employee/infra/entities/Employee";
 
 @Entity('squad')
 class Squad {
@@ -10,6 +11,9 @@ class Squad {
         unique: true
     })
     name: string;
+
+    @OneToMany(() => Employee, employee => employee.squadID)
+    employeeId: Employee;
 
     @CreateDateColumn()
     created_at: Date;

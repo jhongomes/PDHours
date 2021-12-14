@@ -11,10 +11,10 @@ class DeleteSquadUseCase {
     async execute(id: string): Promise<void> {
         const squad = await this.squadRepository.findById(id)
 
-        if (!squad) {
-            throw new AppError("Squad does not exists!")
-        }
+        if (!squad) throw new AppError("Squad does not exists!")
+
         await this.squadRepository.Delete(squad);
     }
 }
+
 export { DeleteSquadUseCase }

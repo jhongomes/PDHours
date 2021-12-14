@@ -3,7 +3,6 @@ import { AppError } from "../../../../shared/errors/AppError";
 import { Squad } from "../../infra/entities/Squad";
 import { ISquadRepository } from "../../repositories/ISquadRepository";
 
-
 @injectable()
 class GetSquadUseCase {
     constructor(
@@ -13,9 +12,7 @@ class GetSquadUseCase {
     async execute(name: string): Promise<Squad> {
         const squad = await this.squadRepository.findByName(name)
 
-        if (!squad) {
-            throw new AppError("squad does not exists!")
-        }
+        if (!squad) throw new AppError("squad does not exists!")
 
         return squad;
     }
@@ -28,7 +25,7 @@ class GetAllSquadUseCase {
         private readonly squadRepository: ISquadRepository) { }
 
     async execute(): Promise<Squad[]> {
-        const squad = await this.squadRepository.Get()
+        const squad = await this.squadRepository.get()
 
         return squad;
     }

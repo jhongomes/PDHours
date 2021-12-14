@@ -16,9 +16,7 @@ class UpdateSquadUseCase {
     }: ISquadDTO): Promise<Squad> {
         const squad = await this.squadRepository.findById(id);
 
-        if (!squad) {
-            throw new AppError("Squad does not exists!");
-        }
+        if (!squad) throw new AppError("Squad does not exists!");
 
         squad.name = name;
 
@@ -28,4 +26,5 @@ class UpdateSquadUseCase {
 
     }
 }
+
 export { UpdateSquadUseCase }
