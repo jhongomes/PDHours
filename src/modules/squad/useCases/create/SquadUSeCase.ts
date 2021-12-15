@@ -15,6 +15,10 @@ class CreateSquadUseCase {
     }: ISquadDTO): Promise<Squad> {
         const squad = new Squad()
 
+        const nameAlreadyExists = await this.squadRepository.findByName(name)
+
+        if(nameAlreadyExists) throw new AppError("squad already registered!")
+
         if (name == " ") throw new AppError("fill in the name!");
 
         Object.assign(squad, { name })

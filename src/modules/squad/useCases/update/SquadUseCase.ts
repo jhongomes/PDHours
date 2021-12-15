@@ -18,6 +18,10 @@ class UpdateSquadUseCase {
 
         if (!squad) throw new AppError("Squad does not exists!");
 
+        const nameAlreadyExists = await this.squadRepository.findByName(name)
+
+        if(nameAlreadyExists) throw new AppError("Name already exists!");
+
         squad.name = name;
 
         const updateSquad = await this.squadRepository.Update(squad);
