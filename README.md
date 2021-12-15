@@ -128,28 +128,38 @@ Request url parameters example:
 
 * `GET http://localhost:3000/squad/Backend`
 
- ``` name: Backend   ```
+```json 
+
+name: Backend   
+
+```
 
 ## Atualizar dados do esquadrão
 
 * `http://localhost:3333/squad/{id}`
 
 Request url parameters example:
-```
+
+```json
     id: "fba1d606-146a-4e35-b474-2d1c2ba3c1e4"
+
 ```
 
 Body example:
-```
+
+```json
 {
 	"name": "Backend engineering"
 }
+
 ```
 
 ## Remover esquadrão
 * `http://localhost:3333/squad/{id}`
   
 Request url parameters example:
-```
-    id: "fba1d606-146a-4e35-b474-2d1c2ba3c1e4"  
+
+```json
+    id: "fba1d606-146a-4e35-b474-2d1c2ba3c1e4" 
+
 ```
