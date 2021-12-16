@@ -293,4 +293,14 @@ Request url parameters example:
 ```
 
 
+# Testes
+[Jest](https://jestjs.io/) Foi utilizado para os testes, para rodá-los execute:
+```
+$ yarn test
+```
+Ou:
+```
+$ npm run test
+```
+
 <p align="center">Feito por <a href="https://www.linkedin.com/in/jhonatan-gomes-de-souza-513a3a197?challengeId=AQFBHhiP4QdIHQAAAX3BFHIS5K2MDNtBpp5ivwl-velebU8gwQxxhLIz51nO-__MejbD6jfZvQdyKWzrLVGfHNChGYGu8GqyMA&submissionId=ebdd152b-6a1b-c116-99c3-2848b7bbe760" target="_blank">Jhonatan Gomes💜</a></p>
