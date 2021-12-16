@@ -1,7 +1,7 @@
 import { Request, Response } from "express";
 import { container } from "tsyringe";
 import { AppError } from "../../../../shared/errors/AppError";
-import { GetAllEmployeeUseCase, GetEmployeeUseCase } from "./EmployeeUseCase";
+import { GetAllEmployeeUseCase, GetAllHoursSquadMembersUseCase, GetAllHoursTotalSquadMembersUseCase, GetEmployeeUseCase } from "./EmployeeUseCase";
 
 class GetEmployeeController {
     async handle(request: Request, response: Response): Promise<Response> {
@@ -11,7 +11,7 @@ class GetEmployeeController {
 
         const employee = await getEmployeeUseCase.execute(id);
 
-        if(!employee){
+        if (!employee) {
             throw new AppError("Employee does not exist!")
         }
 
@@ -29,4 +29,32 @@ class GetAllEmployeeController {
     }
 }
 
-export { GetEmployeeController, GetAllEmployeeController }
+class GetAllHoursSquadMembersController {
+    async handle(request: Request, response: Response): Promise<Response> {
+        const { squadId } = request.params
+
+        const getAllHoursSquadMembersUseCase = container.resolve(GetAllHoursSquadMembersUseCase)
+
+        const all = await getAllHoursSquadMembersUseCase.execute(squadId)
+
+        return response.json(all);
+    }
+}
+
+class GetAllHoursTotalSquadMembersController {
+    async handle(request: Request, response: Response): Promise<Response> {
+        const { squadId } = request.params
+
+        const getAllHoursSquadMembersUseCase = container.resolve(GetAllHoursTotalSquadMembersUseCase)
+
+        const all = await getAllHoursSquadMembersUseCase.execute(squadId)
+
+        return response.json(all);
+    }
+}
+
+
+export {
+    GetEmployeeController, GetAllEmployeeController,
+    GetAllHoursSquadMembersController, GetAllHoursTotalSquadMembersController
+}

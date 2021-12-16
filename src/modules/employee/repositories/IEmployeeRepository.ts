@@ -3,4 +3,5 @@ import { Employee } from "../infra/entities/Employee";
 
 export interface IEmployeeRepository extends IBaseRepository<Employee> {
     findById(id: string): Promise<Employee>;
+    filterHours(squadId: string): Promise<any[]>;
 }

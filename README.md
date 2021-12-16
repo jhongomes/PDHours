@@ -113,7 +113,6 @@ Request body example:
 {
 	"name": "Backend"
 }
-
  ```
 
 ## Listar esquadrão
@@ -128,11 +127,7 @@ Request url parameters example:
 
 * `GET http://localhost:3000/squad/Backend`
 
-```json 
-
-name: Backend   
-
-```
+``` name: Backend  ```
 
 ## Atualizar dados do esquadrão
 
@@ -140,9 +135,8 @@ name: Backend
 
 Request url parameters example:
 
-```json
-    id: "fba1d606-146a-4e35-b474-2d1c2ba3c1e4"
-
+```
+   id: "fba1d606-146a-4e35-b474-2d1c2ba3c1e4"
 ```
 
 Body example:
@@ -159,7 +153,6 @@ Body example:
   
 Request url parameters example:
 
-```json
+```
     id: "fba1d606-146a-4e35-b474-2d1c2ba3c1e4" 
-
 ```
