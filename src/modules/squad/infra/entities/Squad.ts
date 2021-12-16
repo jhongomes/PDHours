@@ -21,7 +21,6 @@ class Squad {
     @UpdateDateColumn()
     updated_at: Date;
 
-
     constructor() {
         if (!this.id) {
             this.id = uuidv4()
