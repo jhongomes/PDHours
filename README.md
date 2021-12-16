@@ -62,7 +62,7 @@
 - [Express](http://expressjs.com/pt-br/)
 - [Typescript](https://docs.microsoft.com/pt-br/archive/msdn-magazine/2015/january/typescript-understanding-typescript)
 - [TypeORM](https://typeorm.io/#/)
-- [Jest](https://jestjs.io)
+- [SQLITE](https://www.sqlite.org/index.html)
 - [VS Code](https://code.visualstudio.com/) com [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) e [ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 <br>
@@ -125,7 +125,7 @@ Request url parameters example:
 
 Request url parameters example:
 
-* `GET http://localhost:3000/squad/Backend`
+* `GET http://localhost:3333/squad/Backend`
 
 ``` name: Backend  ```
 
@@ -156,3 +156,141 @@ Request url parameters example:
 ```
     id: "fba1d606-146a-4e35-b474-2d1c2ba3c1e4" 
 ```
+<br/>
+
+## Cadastrar funcionário
+* `POST http://localhost:3333/employee`
+
+Request body example:
+ ```json
+{
+	"name": "Jhonatan Gomes",
+	"estimatedHours": 12,
+	"squadId": "fba1d606-146a-4e35-b474-2d1c2ba3c1e4"
+}
+ ```
+
+## Listar todos os funcionário
+
+* `GET http://localhost:3333/employee`
+
+
+## Buscar único funcionário por id
+
+* `GET http://localhost:3333/employee/{id}`
+
+Request url parameters example:
+
+``` 
+    id: "8f63c5a6-50cb-4968-9a27-5c951c1c94cf"
+```
+
+## Listar horas gastas de cada membro de uma determinada squad
+
+* `GET http://localhost:3333/employee/hours/{squadId}`
+
+Request url parameters example:
+
+``` 
+    squadId: "fba1d606-146a-4e35-b474-2d1c2ba3c1e4"
+```
+
+## Listar tempo total gasto de uma squad
+
+* `GET http://localhost:3333/employee/hoursTotal/{squadId}`
+
+Request url parameters example:
+
+``` 
+   squadId: "fba1d606-146a-4e35-b474-2d1c2ba3c1e4"
+```
+
+## Atualizar dados do funcionário
+
+* `PUT http://localhost:3333/employee/{id}`
+
+Request url parameters example:
+
+```
+   id: "8f63c5a6-50cb-4968-9a27-5c951c1c94cf"
+```
+
+Body example:
+
+```json
+{
+	"name": "Jhonatan Gomes",
+	"estimatedHours": 13,
+	"squadId": "fba1d606-146a-4e35-b474-2d1c2ba3c1e4"
+}
+
+```
+
+## Remover funcionário
+* `DELETE http://localhost:3333/employee/{id}`
+  
+Request url parameters example:
+
+```
+    id: "8f63c5a6-50cb-4968-9a27-5c951c1c94cf"
+```
+
+## Cadastrar report
+* `POST http://localhost:3333/report`
+
+Request body example:
+ ```json
+{
+	"description": "Desenvolvendo desafio da PD",
+	"employeeId": "8f63c5a6-50cb-4968-9a27-5c951c1c94cf",
+	"spentHours": 8
+}
+ ```
+
+## Listar todos os report
+
+* `GET http://localhost:3333/report`
+
+
+## Buscar único report por id
+
+* `GET http://localhost:3333/report/{id}`
+
+Request url parameters example:
+
+``` 
+    id: "8f63c5a6-50cb-4968-9a27-5c951c1c94cf"
+```
+
+## Atualizar dados de um report
+
+* `PUT http://localhost:3333/report/{id}`
+
+Request url parameters example:
+
+```
+   id: "8f63c5a6-50cb-4968-9a27-5c951c1c94cf"
+```
+
+Body example:
+
+```json
+{
+	"description": "Desenvolvendo desafio da PD",
+	"employeeId": "d956e245-4e1b-48c9-abf8-980db815343f",
+	"spentHours": 6
+}
+
+```
+
+## Remover report
+* `DELETE http://localhost:3333/report/{id}`
+  
+Request url parameters example:
+
+```
+    id: "8f63c5a6-50cb-4968-9a27-5c951c1c94cf"
+```
+
+
+<p align="center">Feito por <a href="https://www.linkedin.com/in/jhonatan-gomes-de-souza-513a3a197?challengeId=AQFBHhiP4QdIHQAAAX3BFHIS5K2MDNtBpp5ivwl-velebU8gwQxxhLIz51nO-__MejbD6jfZvQdyKWzrLVGfHNChGYGu8GqyMA&submissionId=ebdd152b-6a1b-c116-99c3-2848b7bbe760" target="_blank">Jhonatan Gomes💜</a></p>
