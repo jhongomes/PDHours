@@ -63,6 +63,7 @@
 - [Typescript](https://docs.microsoft.com/pt-br/archive/msdn-magazine/2015/january/typescript-understanding-typescript)
 - [TypeORM](https://typeorm.io/#/)
 - [SQLITE](https://www.sqlite.org/index.html)
+- [Jest](https://jestjs.io)
 - [VS Code](https://code.visualstudio.com/) com [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) e [ESlint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
 <br>
