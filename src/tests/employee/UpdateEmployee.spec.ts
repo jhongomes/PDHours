@@ -43,7 +43,7 @@ describe("Update a employee", () => {
         })
         
         expect(updateEmployee.name).toBe("Jhonatan Gomes")
-        console.log(updateEmployee)
+
     })
 
 })

@@ -37,7 +37,6 @@ describe("Delete a employee", () => {
         await createEmployeeUseCase.execute(employee)
         const findId = await deleteEmployeeUseCase.execute(employee.id)
         expect(findId).toBe(undefined)
-        console.log(findId)
     })
 
 })
